@@ -27,7 +27,7 @@ const useScrollVisibility = () => {
     });
 
     const contentObserver = new IntersectionObserver(handleIntersection, {
-      threshold: 0.1,
+      threshold: 0,
     });
 
     if (headerRef.current) {
