@@ -2,6 +2,7 @@ import { Flex, Grid, GridItem, Heading, Stack, Text } from "@chakra-ui/react";
 import ExperienceCard from "./ExperienceCard";
 import useScrollVisibility from "../../Hooks/useScrollVisibility";
 import SectionHeading from "../Others/SectionHeading";
+import { aboutmePrimaryText, goalsText, hobbiesText, skillText1, skillText2 } from "../../data";
 
 const AboutMeSection = () => {
   const [headerRef, contentRef, isHeaderVisible, isContentVisible] =
@@ -23,16 +24,13 @@ const AboutMeSection = () => {
         transition={`transform 0.75s ease, opacity 0.75s ease`}
       >
         <Text fontFamily="secondary" fontSize={"lg"}>
-          i&apos;m a front-end developer who gets a kick out of transforming
-          designs into real, usable products. i&apos;m all about clean visuals,
-          smooth interactions, and making things fun and easy for people to use.
-          besides, here&apos;s other things you might want to know about me
+          {aboutmePrimaryText}
         </Text>
       </GridItem>
       <GridItem>
         <Grid
           ref={contentRef}
-          minH="400px"
+          minH="420px"
           templateRows={[
             "repeat(30, 1fr)",
             "repeat(30, 1fr)",
@@ -66,19 +64,18 @@ const AboutMeSection = () => {
               </Heading>
               <Stack textAlign="end" rowGap={1}>
                 <Text fontFamily="secondary" fontSize={"lg"}>
-                  i turn ui dreams into pixel-perfect realities using
+                  {skillText1?.body?.toLowerCase()}
                 </Text>
                 <Heading as="h4" fontFamily="primary" size="lg">
-                  react, redux and javascript
+                  {skillText1?.header?.toLowerCase()}
                 </Heading>
               </Stack>
               <Stack textAlign="start" rowGap={1}>
                 <Heading as="h4" fontFamily="primary" size="lg">
-                  material ui and chakra ui
+                  {skillText2?.header?.toLowerCase()}
                 </Heading>
                 <Text fontFamily="secondary" fontSize={"lg"}>
-                  allow me to design clean, consistent, and performant user
-                  interfaces
+                  {skillText2?.body?.toLowerCase()}
                 </Text>
               </Stack>
             </Stack>
@@ -126,8 +123,7 @@ const AboutMeSection = () => {
                 goals
               </Heading>
               <Text fontFamily="secondary" fontSize={"lg"}>
-                lead the charge as a product manager and revolutionize the
-                industry
+                {goalsText}
               </Text>
             </Stack>
           </GridItem>
@@ -148,7 +144,7 @@ const AboutMeSection = () => {
                 hobbies
               </Heading>
               <Text fontFamily="secondary" fontSize={"lg"}>
-                foodie
+                {hobbiesText}
               </Text>
             </Stack>
           </GridItem>

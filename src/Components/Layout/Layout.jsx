@@ -24,13 +24,6 @@ const Layout = () => {
   const scrollToSection = useCallback((navlink) => {
     if (!navlink) return;
 
-    if(navlink === "resume"){
-      console.log(navlink);
-      const resumeLink = 'https://drive.google.com/file/d/1AJVvo9oxgVryo0sAGm7KajQaW_GAgVmC/view?usp=sharing';
-      window.open(resumeLink, '_blank', 'noopener noreferrer');
-      return;
-    }
-
     const element = document.getElementById(navlink) || null;
     if (!element) return;
 

@@ -1,13 +1,14 @@
 import { Center, Icon, useColorMode } from "@chakra-ui/react";
 import PropTypes from "prop-types";
+import { memo } from "react";
 import { FiX, FiMenu } from "react-icons/fi";
 
 
-const MenuToggle = ({ toggle, isOpen }) => {
+const MenuToggle = memo(({ toggle, isOpen }) => {
     const { colorMode } = useColorMode();
   
     return (
-      <Center onClick={toggle}>
+      <Center onClick={toggle} cursor={"pointer"}>
         {isOpen ? (
           <Icon
             as={FiX}
@@ -23,7 +24,9 @@ const MenuToggle = ({ toggle, isOpen }) => {
         )}
       </Center>
     );
-  };
+  });
+
+  MenuToggle.displayName = "MenuToggle";
   
   MenuToggle.propTypes = {
     toggle: PropTypes.func.isRequired,

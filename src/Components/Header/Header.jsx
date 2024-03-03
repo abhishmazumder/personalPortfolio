@@ -1,16 +1,13 @@
 import { useState, useEffect } from "react";
-import {
-  Box,
-  Flex,
-  Collapse,
-} from "@chakra-ui/react";
-import Logo from "../../assets/Logo";
+import { Box, Flex, Collapse } from "@chakra-ui/react";
+import Logo from "./Logo";
 import MenuLinks from "./MenuLinks";
 import MenuToggle from "./MenuToggle";
 import ColorModeButton from "./ColorModeButton";
 import PropTypes from "prop-types";
 
 const NavBarContainer = ({ children, isAtTop, isOpen, ...props }) => {
+
   return (
     <Flex
       as="header"
@@ -26,7 +23,7 @@ const NavBarContainer = ({ children, isAtTop, isOpen, ...props }) => {
       top="0"
       zIndex="1000"
       backdropFilter={isAtTop || isOpen ? "blur(16px)" : "none"}
-      transition="all 0.3s ease"
+      transition="backdropFilter 0.3s ease"
       {...props}
     >
       {children}
@@ -42,7 +39,6 @@ NavBarContainer.propTypes = {
 
 const Header = ({ scrollToSection, ...props }) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const [isAtTop, setIsAtTop] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -50,12 +46,7 @@ const Header = ({ scrollToSection, ...props }) => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-
-      if (currentScrollPos > 0) {
-        setIsAtTop(true);
-      } else {
-        setIsAtTop(false);
-      }
+      setIsAtTop(currentScrollPos > 0);
     };
 
     window.addEventListener("scroll", handleScroll);

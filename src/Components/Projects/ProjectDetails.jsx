@@ -69,8 +69,8 @@ const ProjectDetails = memo(({ currentProjectView, isBoxOpen }) => {
 ProjectDetails.displayName = "ProjectDetails";
 
 ProjectDetails.propTypes = {
-currentProjectView: PropTypes.object.isRequired,
-isBoxOpen: PropTypes.bool.isRequired,
-}
+  currentProjectView: PropTypes.object.isRequired,
+  isBoxOpen: PropTypes.bool.isRequired,
+};
 
 export default ProjectDetails;

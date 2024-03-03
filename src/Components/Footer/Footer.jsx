@@ -1,8 +1,9 @@
-import { Flex, Grid, GridItem, Spacer, Text } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Link, Spacer, Text } from "@chakra-ui/react";
 import { useMemo } from "react";
+import PropTypes from "prop-types";
+import { chakraURL, copyrightText, figmaURL, reactURL, vercelURL } from "../../data";
 
 const Footer = (props) => {
-  
   const linkStyles = useMemo(
     () => ({
       as: "b",
@@ -18,37 +19,38 @@ const Footer = (props) => {
         <GridItem>
           <Spacer />
           <Text fontFamily="secondary" fontSize="md" textAlign="end">
-            designed on{" "}
+            designed on
             <Text {...linkStyles}>
-              <a href="https://www.figma.com/" target="_blank">
+              {" "}
+              <Link href={figmaURL} _hover={{ textDecoration: "none" }} isExternal>
                 figma
-              </a>
+              </Link>
             </Text>
             <br />
             built with{" "}
             <Text {...linkStyles}>
-              <a href="https://react.dev/" target="_blank">
+              <Link href={reactURL} _hover={{ textDecoration: "none" }} isExternal>
                 react.js
-              </a>
+              </Link>
             </Text>{" "}
             and{" "}
             <Text {...linkStyles}>
-              <a href="https://chakra-ui.com/" target="_blank">
+              <Link href={chakraURL}  _hover={{ textDecoration: "none" }} isExternal>
                 chakra ui
-              </a>
+              </Link>
             </Text>
             <br />
             deployed with{" "}
             <Text {...linkStyles}>
-              <a href="https://vercel.com/" target="_blank">
+              <Link href={vercelURL}  _hover={{ textDecoration: "none" }} isExternal>
                 vercel
-              </a>
+              </Link>
             </Text>
           </Text>
         </GridItem>
         <GridItem>
           <Text fontFamily="primary" fontSize="md">
-            copyright © 2024 abhishek.
+            {copyrightText}
           </Text>
         </GridItem>
       </Grid>
@@ -76,5 +78,9 @@ const FooterContainer = ({ children, ...props }) => {
     </Flex>
   );
 };
+
+FooterContainer.propTypes = {
+  children: PropTypes.node.isRequired,
+}
 
 export default Footer;

@@ -17,6 +17,13 @@ import {
 import { useForm } from "react-hook-form";
 import useScrollVisibility from "../../Hooks/useScrollVisibility";
 import SectionHeading from "../Others/SectionHeading";
+import {
+  contactEmail,
+  contactFormFieldTexts,
+  contactImage,
+  contactPrimaryText,
+  contactURL,
+} from "../../data";
 
 const ContactSection = () => {
   const [headerRef, contentRef, isHeaderVisible, isContentVisible] =
@@ -30,7 +37,7 @@ const ContactSection = () => {
   } = useForm();
 
   const onSubmit = (values) => {
-    fetch("https://formspree.io/f/meqykdgy", {
+    fetch(contactURL, {
       method: "POST",
       body: JSON.stringify(values, null, 2),
       headers: {
@@ -83,7 +90,7 @@ const ContactSection = () => {
               >
                 <Stack h={"100%"} justify={"space-between"} rowGap={4}>
                   <Text fontFamily="secondary" mb={4}>
-                    want to chat? feel free to reach out using the form below
+                    {contactPrimaryText}
                   </Text>
                   <FormControl isInvalid={errors.email}>
                     <FormLabel
@@ -91,13 +98,19 @@ const ContactSection = () => {
                       fontFamily={"primary"}
                       fontSize={"lg"}
                     >
-                      email
+                      {contactFormFieldTexts[
+                        "email"
+                      ]?.labelText?.toLowerCase() || "email"}
                     </FormLabel>
                     <Input
                       id="email"
                       size={"md"}
                       autoComplete="off"
-                      placeholder="your email"
+                      placeholder={
+                        contactFormFieldTexts[
+                          "email"
+                        ]?.placeholderText?.toLowerCase() || "your email"
+                      }
                       variant="outline"
                       borderColor="primary.100"
                       _hover={{
@@ -129,12 +142,18 @@ const ContactSection = () => {
                       fontFamily={"primary"}
                       fontSize={"lg"}
                     >
-                      message
+                      {contactFormFieldTexts[
+                        "message"
+                      ]?.labelText?.toLowerCase() || "message"}
                     </FormLabel>
                     <Textarea
                       id="message"
                       size={"md"}
-                      placeholder="your message"
+                      placeholder={
+                        contactFormFieldTexts[
+                          "message"
+                        ]?.placeholderText?.toLowerCase() || "your message"
+                      }
                       variant="outline"
                       borderColor="primary.100"
                       _hover={{
@@ -146,17 +165,23 @@ const ContactSection = () => {
                       {...register("message", {
                         required: "this is required",
                         minLength: {
-                          value: 4,
-                          message: "minimum length should be 4 characters",
+                          value:
+                            contactFormFieldTexts["message"]?.minLength || 0,
+                          message: `minimum length should be ${
+                            contactFormFieldTexts["message"]?.minLength || 0
+                          } characters`,
                         },
                         maxLength: {
-                          value: 250,
-                          message: "maximum length should be 250 characters",
+                          value:
+                            contactFormFieldTexts["message"]?.maxLength || 250,
+                          message: `maximum length should be ${
+                            contactFormFieldTexts["message"]?.maxLength || 250
+                          } characters`,
                         },
                       })}
                     />
                     <FormErrorMessage>
-                      {errors.message && errors.message.message}
+                      {errors?.message && errors?.message?.message}
                     </FormErrorMessage>
                   </FormControl>
                   <Flex my={4} justify={"end"}>
@@ -176,8 +201,13 @@ const ContactSection = () => {
                   <Text fontFamily="secondary">
                     or, email me directly at
                     <br />
-                    <Link href="mailto:abhish.mazumder@gmail.com" isExternal>
-                      abhish.mazumder@gmail.com
+                    <Link
+                      href={`mailto:${
+                        contactEmail || "abhish.mazumder@gmail.com"
+                      }`}
+                      isExternal
+                    >
+                      {contactEmail || "abhish.mazumder@gmail.com"}
                     </Link>
                   </Text>
                 </Stack>
@@ -186,7 +216,8 @@ const ContactSection = () => {
             <GridItem display={["none", "none", "block", "block"]} h={"450px"}>
               <Box h="100%">
                 <Image
-                  src={"bg_contact_me_x1.png"}
+                  src={contactImage}
+                  alt="contactImage"
                   borderRadius="lg"
                   objectFit="cover"
                   h="100%"

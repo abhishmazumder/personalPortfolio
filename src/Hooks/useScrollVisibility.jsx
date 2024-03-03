@@ -9,14 +9,14 @@ const useScrollVisibility = () => {
 
   useEffect(() => {
     const handleIntersection = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.target === headerRef.current) {
+      entries?.forEach((entry) => {
+        if (entry?.target === headerRef?.current) {
           setHeaderVisible((prev) =>
-            prev === false ? entry.isIntersecting : prev
+            prev === false ? entry?.isIntersecting : prev
           );
-        } else if (entry.target === contentRef.current) {
+        } else if (entry?.target === contentRef?.current) {
           setContentVisible((prev) =>
-            prev === false ? entry.isIntersecting : prev
+            prev === false ? entry?.isIntersecting : prev
           );
         }
       });
@@ -30,12 +30,12 @@ const useScrollVisibility = () => {
       threshold: 0,
     });
 
-    if (headerRef.current) {
-      headerObserver.observe(headerRef.current);
+    if (headerRef?.current) {
+      headerObserver.observe(headerRef?.current);
     }
 
-    if (contentRef.current) {
-      contentObserver.observe(contentRef.current);
+    if (contentRef?.current) {
+      contentObserver.observe(contentRef?.current);
     }
 
     return () => {
