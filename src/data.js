@@ -2,12 +2,12 @@ import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 
 // Header
-export const logoText = "abhishek."
+export const logoText = "abhishek.";
 export const navlinks = ["projects", "about me", "contact"];
 
 //Hero Section
 export const heroPrimaryText = [
-  "i'am abhishek",
+  "i'm abhishek",
   "a design-focused",
   "front-end developer",
 ];
@@ -100,7 +100,6 @@ export const projectList = [
 //About Me Section
 export const aboutmePrimaryText =
   "i'm a front-end developer who gets a kick out of transforming designs into real, usable products. i'm all about clean visuals, smooth interactions, and making things fun and easy for people to use. besides, here's other things you might want to know about me";
-
 export const skillText1 = {
   header: "react, redux and javascript",
   body: "i turn ui dreams into pixel-perfect realities using",
@@ -109,7 +108,6 @@ export const skillText2 = {
   header: "material ui and chakra ui",
   body: "allow me to design clean, consistent, and performant user interfaces",
 };
-
 export const experienceList = [
   {
     expId: 1,
@@ -138,11 +136,10 @@ export const experienceList = [
     end: "Present",
   },
 ];
-
 export const goalsText =
-  "lead the charge as a product manager and revolutionize the industry";
-
-export const hobbiesText = "foodie";
+  "lead as a product manager, pioneering an exceptional, industry-defining product";
+export const hobbiesText =
+  "i'm a culinary globetrotter, music buff, tech geek, and keen political observer";
 
 // Contact Section
 export const contactPrimaryText =
@@ -160,9 +157,23 @@ export const contactFormFieldTexts = {
   },
 };
 export const contactEmail = "abhish.mazumder@gmail.com";
+export const submitStatus = {
+  initial: {
+    color: "transparent",
+    message: "",
+  },
+  success: {
+    color: "inherit",
+    message: "your message has been sent!",
+  },
+  failure: {
+    color: "inherit",
+    message: "oops! there was a problem sending your message",
+  },
+};
 
 // Footer
-export const copyrightText = "copyright © 2024 abhishek."
+export const copyrightText = "copyright © 2024 abhishek.";
 
 // Images
 export const contactImage = "bg_contact_me_x1.png";

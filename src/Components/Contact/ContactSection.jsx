@@ -13,6 +13,8 @@ import {
   Text,
   Textarea,
   Link,
+  useColorMode,
+  Spacer,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import useScrollVisibility from "../../Hooks/useScrollVisibility";
@@ -23,11 +25,17 @@ import {
   contactImage,
   contactPrimaryText,
   contactURL,
+  submitStatus,
 } from "../../data";
+import { useEffect, useState } from "react";
 
 const ContactSection = () => {
   const [headerRef, contentRef, isHeaderVisible, isContentVisible] =
     useScrollVisibility();
+
+  const [displayMessage, setDisplayMessage] = useState("");
+
+  const { colorMode } = useColorMode();
 
   const {
     handleSubmit,
@@ -35,6 +43,10 @@ const ContactSection = () => {
     reset,
     formState: { errors, isSubmitting },
   } = useForm();
+
+  useEffect(() => {
+    setDisplayMessage(submitStatus?.initial);
+  }, []);
 
   const onSubmit = (values) => {
     fetch(contactURL, {
@@ -46,6 +58,7 @@ const ContactSection = () => {
     })
       .then((response) => {
         if (response.ok) {
+          setDisplayMessage(submitStatus.success);
           console.log("your message has been sent!");
           reset();
         } else {
@@ -55,12 +68,14 @@ const ContactSection = () => {
                 data["errors"].map((error) => error["message"]).join(", ")
               );
             } else {
+              setDisplayMessage(submitStatus.failure)
               console.log("oops! there was a problem sending your message");
             }
           });
         }
       })
       .catch(() => {
+        setDisplayMessage(submitStatus.failure);
         console.log("oops! there was a problem sending your message");
       });
   };
@@ -89,8 +104,8 @@ const ContactSection = () => {
                 onSubmit={handleSubmit(onSubmit)}
               >
                 <Stack h={"100%"} justify={"space-between"} rowGap={4}>
-                  <Text fontFamily="secondary" mb={4}>
-                    {contactPrimaryText}
+                  <Text fontFamily="secondary" fontSize={"md"} mb={4}>
+                    {contactPrimaryText?.toLowerCase()}
                   </Text>
                   <FormControl isInvalid={errors.email}>
                     <FormLabel
@@ -184,13 +199,19 @@ const ContactSection = () => {
                       {errors?.message && errors?.message?.message}
                     </FormErrorMessage>
                   </FormControl>
-                  <Flex my={4} justify={"end"}>
+                  <Flex my={4} justifyContent={"space-between"} alignItems={"center"}>
+                    <Text fontFamily={"secondary"} fontSize={"md"} color={displayMessage?.color || "inherit"} transition={"color 0.3s ease"}>
+                      {displayMessage?.message?.toLowerCase()}
+                    </Text>
+                    <Spacer/>
                     <Button
+                      variant="solid"
                       color={"white"}
                       bgColor={"primary.600"}
                       _hover={{
-                        bgColor: "primary.100",
-                        transition: "background-color 0.5s ease",
+                        color: colorMode === "dark" ? "inherit" : "primary.600",
+                        bgColor: "primary.50",
+                        transition: "background-color 0.3s ease",
                       }}
                       isLoading={isSubmitting}
                       type="submit"
@@ -198,7 +219,7 @@ const ContactSection = () => {
                       send
                     </Button>
                   </Flex>
-                  <Text fontFamily="secondary">
+                  <Text fontFamily="secondary" fontSize={"md"}>
                     or, email me directly at
                     <br />
                     <Link

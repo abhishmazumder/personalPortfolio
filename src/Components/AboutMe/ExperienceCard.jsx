@@ -31,9 +31,10 @@ const ExperienceCard = () => {
                     gap={1}
                     href={ele?.orgLink}
                     _hover={{ textDecoration: "none"}}
+                    whiteSpace={"nowrap"}
                     isExternal
                   >
-                    {ele?.orgName?.toLowerCase()}{" "}
+                    {ele?.orgName?.toLowerCase()}
                     <Icon as={FiExternalLink} boxSize={4} />
                   </Link>
                 </Text>

@@ -123,7 +123,7 @@ const AboutMeSection = () => {
                 goals
               </Heading>
               <Text fontFamily="secondary" fontSize={"lg"}>
-                {goalsText}
+                {goalsText?.toLowerCase()}
               </Text>
             </Stack>
           </GridItem>
@@ -144,7 +144,7 @@ const AboutMeSection = () => {
                 hobbies
               </Heading>
               <Text fontFamily="secondary" fontSize={"lg"}>
-                {hobbiesText}
+                {hobbiesText?.toLowerCase()}
               </Text>
             </Stack>
           </GridItem>
