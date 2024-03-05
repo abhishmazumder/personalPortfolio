@@ -1,6 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
-import "@fontsource/inter";
-import "@fontsource-variable/lexend";
+import "@fontsource/inter/400.css";
+import "@fontsource/lexend/700.css";
 
 const config = {
   initialColorMode: "light",
@@ -16,7 +16,7 @@ const colors = {
 };
 
 const fonts = {
-  primary: "'Lexend Variable', sans-serif",
+  primary: "'Lexend', sans-serif",
   secondary: "'Inter', sans-serif",
 };
 

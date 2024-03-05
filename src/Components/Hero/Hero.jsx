@@ -21,7 +21,8 @@ import React from "react";
 const Hero = () => {
   const { colorMode } = useColorMode();
 
-  const [contentRef, isContentVisible] = useScrollVisibility();
+  const [headerRef, contentRef, isHeaderVisible, isContentVisible] =
+    useScrollVisibility();
 
   return (
     <Grid templateColumns={"1fr"} gap={6} ref={contentRef}>
@@ -38,7 +39,7 @@ const Hero = () => {
           <Heading
             fontFamily="primary"
             as="h1"
-            size={["xl", "3xl", "4xl", "4xl"]}
+            size={["2xl", "3xl", "4xl", "4xl"]}
             noOfLines={3}
             transform={`translateY(${isContentVisible ? "0" : "5vh"})`}
             opacity={isContentVisible ? 1 : 0}

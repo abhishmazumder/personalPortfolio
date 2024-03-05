@@ -1,4 +1,4 @@
-import { Flex, Heading, Icon, Tooltip, useColorMode } from "@chakra-ui/react";
+import { Flex, Heading, Icon, Link, Tooltip, useColorMode } from "@chakra-ui/react";
 import { memo, useMemo, useState } from "react";
 import { FiLink } from "react-icons/fi";
 import PropTypes from "prop-types";
@@ -19,21 +19,21 @@ const SectionHeading = memo(({ sectionName, sectionLink }) => {
 
   }
 
-  const baseUrl = useMemo(
+  const sectionURL = useMemo(
     () => {
       const host = window.location.hostname;
       const port = window.location.port ? `:${window.location.port}` : "";
     
       const protocol = host === 'localhost' ? '' : 'https://';
   
-      return `${protocol}${host}${port}`;
+      return `${protocol}${host}${port}/${sectionLink}`;
     },
-    []
+    [sectionLink]
   );
   
 
   const handleOnClick = () => {
-    navigator.clipboard.writeText(`${baseUrl}/${sectionLink}`);
+    navigator.clipboard.writeText(sectionURL);
     setTooltipText("link copied!")
   };
 
@@ -49,7 +49,7 @@ const SectionHeading = memo(({ sectionName, sectionLink }) => {
         {sectionName?.toLowerCase()}
       </Heading>
       <Tooltip hasArrow label={tooltipText}  closeOnClick={false}>
-        <span>
+        <Link href={sectionURL} _hover={{ textDecoration: "none"}}>
         <Icon
           boxSize={7}
           cursor={"pointer"}
@@ -61,9 +61,9 @@ const SectionHeading = memo(({ sectionName, sectionLink }) => {
             transition: "color .3s ease",
           }}
           transition={"opacity .3s ease"}
-          onClick={() => handleOnClick()}
+          onClick={handleOnClick}
         />
-        </span>
+        </Link>
       </Tooltip>
     </Flex>
   );
