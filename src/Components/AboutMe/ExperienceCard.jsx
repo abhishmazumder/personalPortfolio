@@ -40,7 +40,7 @@ const ExperienceCard = () => {
                 </Text>
               </Stack>
               <Text fontFamily="primary" fontSize="sm">
-                {`${ele?.start} - ${ele?.end}`}
+                {`${ele?.start?.toLowerCase()} - ${ele?.end?.toLowerCase()}`}
               </Text>
             </Flex>
             <TechStackGroup techStack={ele?.techStack} />

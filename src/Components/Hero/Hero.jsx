@@ -39,7 +39,7 @@ const Hero = () => {
           <Heading
             fontFamily="primary"
             as="h1"
-            size={["2xl", "3xl", "4xl", "4xl"]}
+            size={["xl", "2xl", "3xl", "4xl"]}
             noOfLines={3}
             transform={`translateY(${isContentVisible ? "0" : "5vh"})`}
             opacity={isContentVisible ? 1 : 0}
