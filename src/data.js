@@ -45,8 +45,8 @@ export const projectList = [
     techStack: ["react.js", "material ui", "axios"],
     repoLink: "https://github.com/abhimazumder/weatherApp",
     demoLink: "https://weather-app-one-zeta-18.vercel.app/",
-    cardImage: "bg_weather_app_x1.png",
-    demoGif: "bg_weather_app_x1.png",
+    cardImage: "bg_weather_app_x1.webp",
+    demoGif: "bg_weather_app_x1.webp",
   },
   {
     projectId: 2,
@@ -58,8 +58,8 @@ export const projectList = [
     techStack: ["react.js", "redux", "material ui", "axios"],
     repoLink: "https://github.com/abhimazumder/hangmanGame",
     demoLink: "https://hangman-game-sage.vercel.app/",
-    cardImage: "bg_hangman_game_x1.png",
-    demoGif: "bg_hangman_game_x1.png",
+    cardImage: "bg_hangman_game_x1.webp",
+    demoGif: "bg_hangman_game_x1.webp",
   },
   {
     projectId: 3,
@@ -79,8 +79,8 @@ export const projectList = [
     ],
     repoLink: "https://github.com/abhimazumder/chakri-chai-frontend",
     demoLink: "",
-    cardImage: "bg_chakri_chai_x1.png",
-    demoGif: "bg_chakri_chai_x1.png",
+    cardImage: "bg_chakri_chai_x1.webp",
+    demoGif: "bg_chakri_chai_x1.webp",
   },
   {
     projectId: 4,
@@ -92,8 +92,8 @@ export const projectList = [
     techStack: ["node.js", "express.js", "mongodb atlas", "bootstrap"],
     repoLink: "https://github.com/abhimazumder/splitter-app",
     demoLink: "",
-    cardImage: "bg_splitter_app_x1.png",
-    demoGif: "bg_splitter_app_x1.png",
+    cardImage: "bg_splitter_app_x1.webp",
+    demoGif: "bg_splitter_app_x1.webp",
   },
 ];
 
@@ -176,7 +176,7 @@ export const submitStatus = {
 export const copyrightText = "copyright © 2024 abhishek.";
 
 // Images
-export const contactImage = "bg_contact_me_x1.png";
+export const contactImage = "bg_contact_me_x1.webp";
 
 // URLs
 export const resumeURL =
