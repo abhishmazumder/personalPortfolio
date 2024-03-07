@@ -15,6 +15,7 @@ function BackgroundWrapper({ children }) {
           : "radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 0)"
       }
       backgroundSize="10px 10px"
+      backgroundAttachment={"fixed"}
     >
       {children}
     </Box>

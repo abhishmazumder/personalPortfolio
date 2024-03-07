@@ -30,8 +30,9 @@ const ProjectSection = () => {
   );
 
   return (
-    <Grid templateRows="1fr" rowGap={10} ref={headerRef}>
+    <Grid templateRows="1fr" rowGap={10}>
       <GridItem
+        ref={headerRef}
         transform={`translateY(${isHeaderVisible ? "0" : "5vh"})`}
         opacity={isHeaderVisible ? "1" : "0"}
         transition={"transform 0.5s ease, opacity 0.5s ease"}
@@ -56,10 +57,12 @@ const ProjectSection = () => {
           ))}
         </Grid>
       </GridItem>
+      <GridItem>
       <ProjectDetails
         currentProjectView={currentProjectView}
         isBoxOpen={isBoxOpen}
       />
+      </GridItem>
     </Grid>
   );
 };
