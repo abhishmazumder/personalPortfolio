@@ -49,7 +49,7 @@ const Footer = (props) => {
           </Text>
         </GridItem>
         <GridItem>
-          <Text fontFamily="primary" fontSize="md">
+          <Text fontFamily="secondary" fontSize="md">
             {copyrightText}
           </Text>
         </GridItem>

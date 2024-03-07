@@ -59,7 +59,6 @@ const ContactSection = () => {
       .then((response) => {
         if (response.ok) {
           setDisplayMessage(submitStatus.success);
-          console.log("your message has been sent!");
           reset();
         } else {
           response.json().then((data) => {
@@ -68,15 +67,13 @@ const ContactSection = () => {
                 data["errors"].map((error) => error["message"]).join(", ")
               );
             } else {
-              setDisplayMessage(submitStatus.failure)
-              console.log("oops! there was a problem sending your message");
+              setDisplayMessage(submitStatus.failure);
             }
           });
         }
       })
       .catch(() => {
         setDisplayMessage(submitStatus.failure);
-        console.log("oops! there was a problem sending your message");
       });
   };
 
@@ -111,7 +108,7 @@ const ContactSection = () => {
                     <FormLabel
                       htmlFor="email"
                       fontFamily={"primary"}
-                      fontSize={"lg"}
+                      fontSize={"md"}
                     >
                       {contactFormFieldTexts[
                         "email"
@@ -155,7 +152,7 @@ const ContactSection = () => {
                     <FormLabel
                       htmlFor="message"
                       fontFamily={"primary"}
-                      fontSize={"lg"}
+                      fontSize={"md"}
                     >
                       {contactFormFieldTexts[
                         "message"
@@ -164,6 +161,7 @@ const ContactSection = () => {
                     <Textarea
                       id="message"
                       size={"md"}
+                      resize={"none"}
                       placeholder={
                         contactFormFieldTexts[
                           "message"
@@ -199,11 +197,20 @@ const ContactSection = () => {
                       {errors?.message && errors?.message?.message}
                     </FormErrorMessage>
                   </FormControl>
-                  <Flex my={4} justifyContent={"space-between"} alignItems={"center"}>
-                    <Text fontFamily={"secondary"} fontSize={"md"} color={displayMessage?.color || "inherit"} transition={"color 0.3s ease"}>
+                  <Flex
+                    my={4}
+                    justifyContent={"space-between"}
+                    alignItems={"center"}
+                  >
+                    <Text
+                      fontFamily={"secondary"}
+                      fontSize={"md"}
+                      color={displayMessage?.color || "inherit"}
+                      transition={"color 0.3s ease"}
+                    >
                       {displayMessage?.message?.toLowerCase()}
                     </Text>
-                    <Spacer/>
+                    <Spacer />
                     <Button
                       variant="solid"
                       color={"white"}
