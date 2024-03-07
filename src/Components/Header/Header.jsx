@@ -7,7 +7,6 @@ import ColorModeButton from "./ColorModeButton";
 import PropTypes from "prop-types";
 
 const NavBarContainer = ({ children, isAtTop, isOpen, ...props }) => {
-
   return (
     <Flex
       as="header"
@@ -15,9 +14,9 @@ const NavBarContainer = ({ children, isAtTop, isOpen, ...props }) => {
       justify="space-between"
       wrap="wrap"
       w="100%"
-      mb={[6, 6, 8, 8]}
-      py={[6, 6, 6, 6]}
-      px={[4, 4, 12, 12]}
+      py={6}
+      px={4}
+      mb={2}
       bg="transparent"
       position="sticky"
       top="0"
@@ -74,7 +73,7 @@ const Header = ({ scrollToSection, ...props }) => {
         </Collapse>
       </Box>
 
-      <Flex align="center" gap={8} display={["none", "none", "flex", "flex"]}>
+      <Flex align="center" gap={10} display={["none", "none", "flex", "flex"]}>
         <MenuLinks scrollToSection={scrollToSection} />
         <ColorModeButton />
       </Flex>

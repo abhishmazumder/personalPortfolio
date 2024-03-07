@@ -11,7 +11,6 @@ const MenuItem = memo(({ children, to, handleClick, ...props }) => {
     <Text
       display="flex"
       alignItems="center"
-      gap={1}
       fontFamily="secondary"
       fontSize={"xl"}
       py={1}
@@ -20,7 +19,8 @@ const MenuItem = memo(({ children, to, handleClick, ...props }) => {
       cursor="pointer"
       color={colorMode === "dark" ? "inherit" : "primary.600"}
       _hover={{
-        backgroundColor: "primary.50",
+        backgroundColor: colorMode === "dark" ? "primary.50" : "primary.100",
+        color: colorMode === "dark" ? "inherit" : "white",
       }}
       transition="background-color 0.3s ease, color 0.3s ease"
       onClick={() => handleClick(to)}
@@ -47,11 +47,12 @@ const MenuLinks = memo(({ scrollToSection, ...props }) => {
   return (
     <Stack
       {...props}
-      spacing={8}
+      gap={8}
       align="center"
-      justify={["center", "space-between", "flex-end", "flex-end"]}
+      justify={["center", "space-between", "space-between", "space-between"]}
       direction={["column", "row", "row", "row"]}
-      p={[2.5, 2.5, 0, 0]}
+      pt={[5, 5, 0, 0]}
+      pb={[2, 2, 0, 0]}
     >
       {navlinks?.map((link, index) => (
         <MenuItem

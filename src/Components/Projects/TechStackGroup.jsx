@@ -19,7 +19,7 @@ const TechStackGroup = memo(({ techStack }) => {
           }}
           transition="transform 0.3s ease"
         >
-          <Text fontFamily={"primary"} fontSize={"md"} noOfLines={1}>
+          <Text fontFamily={"secondary"} fontSize={"md"} noOfLines={1}>
             {ele?.toLowerCase()}
           </Text>
         </Center>

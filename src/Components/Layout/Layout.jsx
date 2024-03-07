@@ -2,11 +2,11 @@ import { lazy, useCallback, useEffect } from "react";
 import { Container, Grid, GridItem } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 
-import Header from "../Header/Header.jsx";
-import Hero from "../Hero/Hero.jsx";
+// import Header from "../Header/Header.jsx";
+// import Hero from "../Hero/Hero.jsx";
 
-// const Header = lazy(() => import("../Header/Header"));
-// const Hero = lazy(() => import("../Hero/Hero"));
+const Header = lazy(() => import("../Header/Header"));
+const Hero = lazy(() => import("../Hero/Hero"));
 const ProjectSection = lazy(() =>
   import("../Projects/ProjectSection")
 );
