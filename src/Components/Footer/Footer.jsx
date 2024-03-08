@@ -65,9 +65,9 @@ const FooterContainer = ({ children, ...props }) => {
       wrap="wrap"
       w="100%"
       h="auto"
-      mt={[10, 10, 10, 10]}
-      py={[3, 3, 6, 6]}
-      px={[4, 4, 12, 12]}
+      mt={10}
+      py={6}
+      px={4}
       bg="transparent"
       position="static"
       bottom="0"
