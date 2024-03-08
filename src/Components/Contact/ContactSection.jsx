@@ -241,7 +241,7 @@ const ContactSection = () => {
                 </Stack>
               </form>
             </GridItem>
-            <GridItem display={["none", "none", "block", "block"]} h={"450px"}>
+            <GridItem display={["none", "none", "block", "block"]} h={["auto", "auto", "470px", "450px"]}>
               <Box h="100%">
                 <Image
                   src={contactImage}
