@@ -52,7 +52,7 @@ const SectionHeading = memo(({ sectionName, sectionLink }) => {
         {sectionName?.toLowerCase()}
       </Heading>
       <Tooltip hasArrow label={tooltipText} closeOnClick={false}>
-        <Link href={sectionURL} _hover={{ textDecoration: "none" }} onClick={handleOnClick}>
+        <Link href={sectionURL} _hover={{ textDecoration: "none" }} onClick={handleOnClick} aria-label={sectionLink}>
           <Icon
             boxSize={7}
             cursor={"pointer"}

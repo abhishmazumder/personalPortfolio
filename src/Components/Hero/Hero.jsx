@@ -87,7 +87,7 @@ const Hero = () => {
                   icon={
                     <Icon w={7} h={7} as={ele?.socialIcon} color={"inherit"} />
                   }
-                  name={ele?.socialName}
+                  aria-label={ele?.socialName}
                   transform={`translateY(${isContentVisible ? "0" : "5vh"})`}
                   opacity={isContentVisible ? 1 : 0}
                   transition={`transform ${

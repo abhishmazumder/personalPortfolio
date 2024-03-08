@@ -24,6 +24,7 @@ const ColorModeButton = memo((props) => {
           <Icon boxSize={7} as={FiMoon} color="inherit" />
         )
       }
+      aria-label={"colorModeButton"}
       onClick={() => toggleColorMode()}
     />
   );
