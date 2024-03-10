@@ -7,7 +7,7 @@ export const navlinks = ["projects", "about me", "contact"];
 
 //Hero Section
 export const heroPrimaryText = [
-  "i'm abhishek",
+  "i'm abhishek,",
   "a design-focused",
   "front-end developer",
 ];
