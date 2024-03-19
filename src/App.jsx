@@ -1,6 +1,6 @@
-import { Center, Heading } from "@chakra-ui/react";
 import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
+import LazyLoader from "./Components/Others/LazyLoader";
 const Layout = lazy(() => import("./Components/Layout/Layout"));
 
 function App() {
@@ -9,23 +9,7 @@ function App() {
       <Route
         path="*"
         element={
-          <Suspense
-            fallback={
-              <Center
-                h={"100%"}
-                minH={"100vh"}
-              >
-                <Heading
-                  as="h1"
-                  fontSize={"lg"}
-                  fontFamily={"primary"}
-                  opacity={"0.5"}
-                >
-                  abhishek.
-                </Heading>
-              </Center>
-            }
-          >
+          <Suspense fallback={<LazyLoader />}>
             <Layout />
           </Suspense>
         }
