@@ -19,17 +19,17 @@ export const heroSocialHandles = [
   {
     socialName: "github",
     socialIcon: FiGithub,
-    socialURL: "https://github.com/abhimazumder",
+    socialURL: "https://github.com/abhishmazumder",
   },
   {
     socialName: "linkedin",
     socialIcon: FiLinkedin,
-    socialURL: "https://www.linkedin.com/in/abhish-mazumder/",
+    socialURL: "https://www.linkedin.com/in/abhishmazumder/",
   },
   {
     socialName: "x/twitter",
     socialIcon: FaXTwitter,
-    socialURL: "https://x.com/abhish_mazumder",
+    socialURL: "https://x.com/abhishmazumder",
   },
 ];
 
