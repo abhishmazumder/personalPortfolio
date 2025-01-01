@@ -180,7 +180,7 @@ export const contactImage = "bg_contact_me_x1.webp";
 
 // URLs
 export const resumeURL =
-  "https://drive.google.com/file/d/1eYX53RlN1VPHAuwwfdldsXGwVUH5AWEc/view?usp=sharing";
+  "https://docs.google.com/document/d/18ObCz5RwO-Rb0RBbncn6v1CPiJgJpNjovf3EsU82DUE/edit?usp=sharing";
 export const contactURL = "https://formspree.io/f/meqykdgy";
 export const figmaURL = "https://www.figma.com/";
 export const reactURL = "https://react.dev/";
